@@ -1,26 +1,56 @@
+import javax.swing.JOptionPane;
 public class Main {
     public static void main(String[] args) {
-        int result;
-        result = myFunction(10, 20, 62);
-        Coche myCoche = new Coche();
-        myCoche.incrementDoors();
-        System.out.println(result);
-        System.out.println(myCoche.puertas);
+        String value = JOptionPane.showInputDialog("Digita un valor para el if");
+        String valueWhile = JOptionPane.showInputDialog("Digita un valor para el while y do While");
 
+        int numeroIf = Integer.parseInt(value);
+        int numeroWhile = Integer.parseInt(valueWhile);
+        int numeroFor;
+        int estacion = 1;
+        int counter = 0;
+
+
+        //If example
+        if(numeroIf<=0){
+            System.out.println("El número "+ (numeroIf) + " es negativo o cero");
+        }else{
+            System.out.println("El número "+ (numeroIf) + " es positivo");
+        }
+
+       //While example
+        while(numeroIf<3){
+            numeroIf++;
+            System.out.println("El valor del while " + (numeroIf));
+        }
+
+        //DoWhile example
+        do{
+            numeroIf++;
+            System.out.println("El valor del doWhile "+ (numeroIf));
+        }while(numeroIf<3 && counter<2);
+
+        //For Example
+        for(numeroFor=0;numeroFor<3;numeroFor++){
+            System.out.println("Este es el incremento del numero en el for " + (numeroFor));
+
+        }
+
+        //Switch example
+        switch (estacion){
+            case 1:
+                System.out.println("primavera");
+                break;
+            case 2:
+                System.out.println("verano");
+                break;
+            case 3:
+                System.out.println("otoño");
+                break;
+            case 4:
+                System.out.println("invierno");
+                break;
+
+        }
     }
-    //First Part
-    public static int myFunction (int a, int b, int d){
-        return a + b + d;
-
-    }
-
-}
-//Second Part
-class Coche{
-    public int puertas = 4;
-    public void incrementDoors(){
-        this.puertas++;
-
-    }
-
 }
